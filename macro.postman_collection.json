@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "4df68d86-ebc4-467f-917a-45559deb45cc",
+		"name": "macro",
+		"description": "Backend\n\nНапишите REST API для анонимного блога.\n\nНеобходимо реализовать следующие методы\n\nДобавить запись\n\n(имя автора, текст сообщения) -> (id добавленной записи)\n\nДобавить комментарий\n\n(id записи, имя автора, текст сообщения) -> (id добавленного комментария)\n\nПолучить запись\n\n(id записи) -> (объект записи)\n\nПолучить список записей и последние 3 комментария к каждой записи\n\n(page id) -> (список объектов)\n\nПолучить список комментариев к записи\n\n(id записи) -> (список комментариев)\n\nТребования:\n\n\\- Любой современный фреймворк\n\n\\- MySQL\n\n\\- Документация\n\nБудет плюсом:\n\n\\- Docker окружение для запуска\n\n\\- Валидация данных\n\n  -- Комментарий не более 200 символов\n\n  -- Пост не боле 5000 символов\n\n  -- Не больше одного комментария в минуту от одного имени\n\n  \nБудет большим плюсом\n\n\\- Юнит тесты\n\n  \nОчень большой плюс\n\n\\- Swagger документация",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24205030"
+	},
+	"item": [
+		{
+			"name": "Получить запись",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/record/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"record",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список записей и последние 3 комментария к каждой записи",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"records"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить запись",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "XSRF-TOKEN",
+						"value": "eyJpdiI6ImhlcU11K1F0TWtqMytLWXJGZHBTemc9PSIsInZhbHVlIjoiYVFtV2Voc3hJcHVVbUVtNENkVlJ2dVdLdTkyL0IzQXNKQldrdW95dy94N3pETm1nOTl0cWtOS0ttWUF1YW8wdE1YZ1paSkJQdWd6Q0s0Q2dxM28wdzl1SkFTWnAzZW1MT2tpT0ducUN5QU5aM2xSYnhtZWt6cytocUJzTmhwdmsiLCJtYWMiOiI5MDcwZTRiZTI0ZmQ3YzEyZjE1ODg1OWUxNzU0ZDBiMmMzM2RhNGIxMzk5NGRhMDc1MDJjNjM0MzQ1YjZlODBjIiwidGFnIjoiIn0%3D",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api/record?author=&message=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"record"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": ""
+						},
+						{
+							"key": "message",
+							"value": ""
+						},
+						{
+							"key": "XSRF-TOKEN",
+							"value": "eyJpdiI6ImhlcU11K1F0TWtqMytLWXJGZHBTemc9PSIsInZhbHVlIjoiYVFtV2Voc3hJcHVVbUVtNENkVlJ2dVdLdTkyL0IzQXNKQldrdW95dy94N3pETm1nOTl0cWtOS0ttWUF1YW8wdE1YZ1paSkJQdWd6Q0s0Q2dxM28wdzl1SkFTWnAzZW1MT2tpT0ducUN5QU5aM2xSYnhtZWt6cytocUJzTmhwdmsiLCJtYWMiOiI5MDcwZTRiZTI0ZmQ3YzEyZjE1ODg1OWUxNzU0ZDBiMmMzM2RhNGIxMzk5NGRhMDc1MDJjNjM0MzQ1YjZlODBjIiwidGFnIjoiIn0%3D",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить комментарий",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/comment?author=Иван Петров&message=Комментарий Ивана Петрова",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"comment"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Иван Петров"
+						},
+						{
+							"key": "message",
+							"value": "Комментарий Ивана Петрова"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список комментариев к записи",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/comments?record_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "record_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
