@@ -1,5 +1,5 @@
-## [1. Задание Laravel](#1)
-## [2. Инструкция по запуску проекта](#2)
+### [1. Задание Laravel](#1)
+### [2. Инструкция по запуску проекта](#2)
 
 ### <a name="1">1. Задание Laravel</a> 
 
@@ -68,7 +68,7 @@ Backend
     
 Добавить комментарий
 
-    [http://localhost/api/comment?author=Иван Петров&message=Комментарий Ивана Петрова](http://localhost/api/comment?author=Иван Петров&message=Комментарий Ивана Петрова&record_id=1)
+    http://localhost/api/comment?author=Иван Петров&message=Комментарий Ивана Петрова&record_id=1
     
 <img width="856" alt="image" src="https://user-images.githubusercontent.com/63869857/201673633-986b87b3-060a-4c39-bc61-b63b8d783dd9.png">
 
