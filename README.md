@@ -76,7 +76,7 @@ Backend
     
     http://localhost/api/record/1
     
-    <img width="856" alt="image" src="https://user-images.githubusercontent.com/63869857/201672462-fbd41e46-0620-49d1-94c0-61c211bb63c2.png">
+<img width="856" alt="image" src="https://user-images.githubusercontent.com/63869857/201672462-fbd41e46-0620-49d1-94c0-61c211bb63c2.png">
     
 Получить список записей и последние 3 комментария к каждой записи
 
